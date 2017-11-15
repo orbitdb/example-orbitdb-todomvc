@@ -1,0 +1,8 @@
+.loadingText {
+  font-size: 18px;
+  line-height: 1.4em;
+  padding: 20px;
+  text-align: center;
+  color: rgba(128, 128, 128, 0.6);
+  background: rgba(0, 0, 0, 0.003);
+}

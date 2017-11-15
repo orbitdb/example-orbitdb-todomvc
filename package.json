@@ -1,0 +1,28 @@
+{
+  "name": "example-todomvc-orbitdb",
+  "version": "1.0.0",
+  "description": "TodoMVC with OrbitDB example",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haadcode/example-orbitdb-todomvc"
+  },
+  "dependencies": {
+    "classnames": "^2.1.5",
+    "director": "^1.2.0",
+    "react": "^0.13.3",
+    "todomvc-app-css": "^2.0.0",
+    "todomvc-common": "^1.0.1",
+    "ipfs": "~0.26.0",
+    "orbit-db": "github:orbitdb/orbit-db#feat/write-access"
+  },
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  },
+  "scripts": {
+    "start": "http-server -c-1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Haad",
+  "license": "MIT"
+}
