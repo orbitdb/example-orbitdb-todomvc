@@ -9,7 +9,7 @@ var app = app || {};
 	'use strict';
 
 	// Name of the database
-	var namespace = 'react-todos'
+	var namespace = 'react-todos';
 
 	app.ALL_TODOS = 'all';
 	app.ACTIVE_TODOS = 'active';
@@ -184,7 +184,7 @@ var app = app || {};
 		}
 	});
 
-	// Create the store (storage backend)
+	// Create the store (storage backend), namespace is our database name/id
 	var db = await store(namespace);
 
 	// Create the data model

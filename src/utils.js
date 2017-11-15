@@ -34,10 +34,12 @@ var app = app || {};
 
 			var todos = db.query(e => true)
 				.sort((a, b) => {
-					// Sort by the time of first revision
+					// Sort by the time of first revision,
+					// ie. order the entries by their first appearance
 					const aMin = Array.from(a._revs).reduce((res, e) => res = Math.min(e.clock.time, res), a.clock.time)
 					const bMin = Array.from(b._revs).reduce((res, e) => res = Math.min(e.clock.time, res), b.clock.time)
 					const dist = bMin - aMin
+					// If updates were concurrent, sort by user id
 					return dist !== 0 ? dist : a.clock.id > b.clock.id ? -1 : 1
 				})
 				.map(e => e.payload.value.todo)

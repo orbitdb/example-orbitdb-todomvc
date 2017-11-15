@@ -31,7 +31,7 @@ var app = app || {};
 		})
 		// When a remote peer updated the todos, refresh our data model
 		this.db.events.on('replicated', () => this.inform())
-
+		// Watch for load progress and update the model state with the progress
 		this.db.events.on('load.progress', (address, hash, entry, progress, total) => {
 			this.status.loaded = progress
 			this.status.total = total
