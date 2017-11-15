@@ -39,10 +39,6 @@ var app = app || {};
 		})
 	};
 
-	app.TodoModel.prototype.load = async function () {
-		await this.inform();
-	};
-
 	app.TodoModel.prototype.subscribe = function (onChange) {
 		this.onChanges.push(onChange);
 	};

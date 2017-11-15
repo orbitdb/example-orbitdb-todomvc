@@ -32,7 +32,7 @@ var app = app || {};
 				await db.del(removeTodo.id)
 			}
 
-			var todos = db.query(e => true)
+			var todos = db.query(e => true, { fullOp: true })
 				.sort((a, b) => {
 					// Sort by the time of first revision,
 					// ie. order the entries by their first appearance

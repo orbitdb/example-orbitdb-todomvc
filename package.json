@@ -14,13 +14,13 @@
     "todomvc-app-css": "^2.0.0",
     "todomvc-common": "^1.0.1",
     "ipfs": "~0.26.0",
-    "orbit-db": "github:orbitdb/orbit-db#feat/write-access"
+    "orbit-db": "github:orbitdb/orbit-db#feat/document-revisions"
   },
   "devDependencies": {
     "http-server": "^0.10.0"
   },
   "scripts": {
-    "start": "http-server -c-1",
+    "start": "http-server -c-1 & open http://127.0.0.1:8080/index.html & wait",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Haad",
