@@ -6,6 +6,10 @@ TodoMVC application using [OrbitDB](https://github.com/orbitdb/orbit-db) as a da
 
 ***Work in progress***
 
+<p align="centers">
+  <img src="https://raw.githubusercontent.com/haadcode/example-orbitdb-todomvc/master/screenshots/Screen%20Shot%202017-11-29%20at%2017.09.31.png" width="50%">
+</p>
+
 ## Install
 ```
 git clone <repo>
