@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" data-framework="react">
+  <head>
+    <meta charset="utf-8">
+    <title>OrbitDB • TodoMVC</title>
+    <link rel="stylesheet" href="lib/base.css">
+    <link rel="stylesheet" href="lib/index.css">
+    <link rel="stylesheet" href="src/app.css">
+  </head>
+  <body>
+    <section class="todoapp"></section>
+    <footer class="info">
+      <p>Double-click to edit a todo</p>
+      <p>Created by <a href="http://github.com/haadcode/">Haad</a></p>
+      <p>Based on <a href="https://github.com/tastejs/todomvc/tree/master/examples/react">React</a> <a href="http://todomvc.com">TodoMVC</a></p>
+    </footer>
+
+    <script src="lib/base.js"></script>
+    <script src="lib/react-with-addons.js"></script>
+    <script src="lib/classnames.js"></script>
+    <script src="lib/JSXTransformer.js"></script>
+    <script src="lib/director.js"></script>
+    <script src="lib/orbitdb.min.js"></script>
+    <script src="lib/ipfs.min.js"></script>
+
+    <!-- OrbitDB -->
+    <script type="text/javascript" src="src/store.js"></script>
+
+    <!-- Todo MVC -->
+    <script src="src/utils.js"></script>
+    <script src="src/todoModel.js"></script>
+    <!-- jsx is an optional syntactic sugar that transforms methods in React's
+    `render` into an HTML-looking format. Since the two models above are
+    unrelated to React, we didn't need those transforms. -->
+    <script type="text/jsx" src="src/todoItem.jsx"></script>
+    <script type="text/jsx" src="src/footer.jsx"></script>
+    <script type="text/jsx" src="src/app.jsx"></script>
+  </body>
+</html>

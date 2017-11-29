@@ -15,6 +15,7 @@ TodoMVC application using [OrbitDB](https://github.com/orbitdb/orbit-db) as a da
 git clone <repo>
 cd repo/
 npm install
+npm run build
 ```
 
 ## Run
