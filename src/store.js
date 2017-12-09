@@ -1,6 +1,6 @@
 // Configuration for IPFS instance
 const ipfsConfig = {
-  repo: '/orbitdb/examples/todomvc/ipfs',
+  repo: '/orbitdb/examples/todomvc/ipfs/0.27.0',
   EXPERIMENTAL: {
     pubsub: true,
   },

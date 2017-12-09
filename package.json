@@ -13,8 +13,8 @@
     "react": "^0.13.3",
     "todomvc-app-css": "^2.0.0",
     "todomvc-common": "^1.0.1",
-    "ipfs": "~0.26.0",
-    "orbit-db": "github:orbitdb/orbit-db#feat/document-revisions"
+    "ipfs": "~0.27.1",
+    "orbit-db": "~0.18.7"
   },
   "devDependencies": {
     "http-server": "^0.10.0"
