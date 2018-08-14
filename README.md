@@ -42,3 +42,7 @@ This example is based on [React TodoMVC](https://github.com/tastejs/todomvc/tree
 ## Contribute
 
 We'd be happy have contributions! If you find any issues, have suggestions for new features or would like to improve the project, please open an issue.
+
+## License
+
+[MIT](LICENSE) © 2017-2018 Haja Networks Oy
