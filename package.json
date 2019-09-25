@@ -1,6 +1,7 @@
 {
   "name": "example-todomvc-orbitdb",
   "version": "1.0.0",
+  "private": true,
   "description": "TodoMVC with OrbitDB example",
   "main": "index.html",
   "repository": {
