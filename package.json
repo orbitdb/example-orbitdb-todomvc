@@ -19,6 +19,13 @@
   "devDependencies": {
     "http-server": "^0.10.0"
   },
+  "homepage": "https://github.com/orbitdb/example-orbitdb-todomvc",
+  "bugs": "https://github.com/orbitdb/example-orbitdb-todomvc/issues",
+  "keywords": [
+    "orbitdb",
+    "example",
+    "todomvc"
+  ],
   "scripts": {
     "build": "./build.sh",
     "start": "http-server -c-1 & open http://127.0.0.1:8080/index.html & wait",
