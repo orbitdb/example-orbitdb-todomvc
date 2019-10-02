@@ -191,7 +191,7 @@ var app = app || {};
 	var model = new app.TodoModel(db, namespace);
 
 	function render() {
-		React.render(
+		ReactDOM.render(
 			<TodoApp model={model}/>,
 			document.getElementsByClassName('todoapp')[0]
 		);
