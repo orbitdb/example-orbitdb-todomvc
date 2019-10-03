@@ -10,8 +10,8 @@ const ipfsConfig = {
         // Use IPFS dev signal server
         // Websocket:
         // '/dns4/ws-star-signal-1.servep2p.com/tcp/443/wss/p2p-websocket-star',
-				// '/dns4/ws-star-signal-2.servep2p.com/tcp/443/wss/p2p-websocket-star',
-				'/dns4/ws-star.discovery.libp2p.io/tcp/443/wss/p2p-websocket-star',
+        // '/dns4/ws-star-signal-2.servep2p.com/tcp/443/wss/p2p-websocket-star',
+        '/dns4/ws-star.discovery.libp2p.io/tcp/443/wss/p2p-websocket-star',
         // WebRTC:
         // '/dns4/star-signal.cloud.ipfs.team/wss/p2p-webrtc-star',
         // Use local signal server
@@ -28,11 +28,12 @@ const dbConfig = {
   // Don't wait to load from the network
   sync: false,
   // Load only the local version of the database
-  localOnly: true,
+  // localOnly: true,
   // Allow anyone to write to the database,
   // otherwise only the creator of the database can write
-  admin: ['*'],
-  write: ['*'],
+  accessController: {
+    write: ['*'],
+  }
 }
 
 const store = async (name) => {
@@ -47,6 +48,8 @@ const store = async (name) => {
         const orbitdb = await OrbitDB.createInstance(ipfs)
         // Open (or create) database
         const db = await orbitdb.docstore(name, dbConfig)
+        // ToDo: remove this line
+        window.db = db
         // Done
         resolve(db)
       } catch (e) {
