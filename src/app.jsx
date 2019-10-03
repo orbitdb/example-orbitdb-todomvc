@@ -31,15 +31,15 @@ var app = app || {};
 		componentDidMount: function () {
 			var setState = this.setState;
 			var router = Router({
-				'/': setState.bind(this, {nowShowing: app.ALL_TODOS}),
-				'/active': setState.bind(this, {nowShowing: app.ACTIVE_TODOS}),
-				'/completed': setState.bind(this, {nowShowing: app.COMPLETED_TODOS})
+				'/': setState.bind(this, { nowShowing: app.ALL_TODOS }),
+				'/active': setState.bind(this, { nowShowing: app.ACTIVE_TODOS }),
+				'/completed': setState.bind(this, { nowShowing: app.COMPLETED_TODOS })
 			});
 			router.init('/');
 		},
 
 		handleChange: function (event) {
-			this.setState({newTodo: event.target.value});
+			this.setState({ newTodo: event.target.value });
 		},
 
 		handleNewTodoKeyDown: async function (event) {
@@ -53,7 +53,7 @@ var app = app || {};
 
 			if (val) {
 				await this.props.model.addTodo(val);
-				this.setState({newTodo: ''});
+				this.setState({ newTodo: '' });
 			}
 		},
 
@@ -71,16 +71,16 @@ var app = app || {};
 		},
 
 		edit: function (todo) {
-			this.setState({editing: todo.id});
+			this.setState({ editing: todo.id });
 		},
 
 		save: async function (todoToSave, text) {
 			await this.props.model.save(todoToSave, text);
-			this.setState({editing: null});
+			this.setState({ editing: null });
 		},
 
 		cancel: function () {
-			this.setState({editing: null});
+			this.setState({ editing: null });
 		},
 
 		clearCompleted: function () {
@@ -94,12 +94,12 @@ var app = app || {};
 
 			var shownTodos = todos.filter(function (todo) {
 				switch (this.state.nowShowing) {
-				case app.ACTIVE_TODOS:
-					return !todo.completed;
-				case app.COMPLETED_TODOS:
-					return todo.completed;
-				default:
-					return true;
+					case app.ACTIVE_TODOS:
+						return !todo.completed;
+					case app.COMPLETED_TODOS:
+						return todo.completed;
+					default:
+						return true;
 				}
 			}, this);
 
@@ -150,30 +150,30 @@ var app = app || {};
 				);
 			}
 
-			const loadPercentage = Math.round(this.props.model.status.loaded  / this.props.model.status.total * 100)
+			const loadPercentage = Math.round(this.props.model.status.loaded / this.props.model.status.total * 100)
 
 			return (
 				<div>
 					<header className="header">
 						<h1>todos</h1>
-						{!this.props.model.ready 
+						{!this.props.model.ready
 							? <p className="loadingText">
-									{this.props.model.ready 
-										? null 
-										: 'Loading... ' + loadPercentage + '%'
-									}
-								</p> 
+								{this.props.model.ready
+									? null
+									: 'Loading... ' + loadPercentage + '%'
+								}
+							</p>
 							: null
 						}
 						{this.props.model.ready
 							? <input
-									className="new-todo"
-									placeholder="What needs to be done?"
-									value={this.state.newTodo}
-									onKeyDown={this.handleNewTodoKeyDown}
-									onChange={this.handleChange}
-									autoFocus={true}
-								/>
+								className="new-todo"
+								placeholder="What needs to be done?"
+								value={this.state.newTodo}
+								onKeyDown={this.handleNewTodoKeyDown}
+								onChange={this.handleChange}
+								autoFocus={true}
+							/>
 							: null
 						}
 					</header>
@@ -188,10 +188,26 @@ var app = app || {};
 	// ToDo: add url query parsing here
 	const match = document.location.href.match(/query=([^&]+)/);
 	if (match) {
-		const address = atob(match[1]) 
+		const address = atob(match[1])
 		OrbitDB.isValidAddress(address) ? namespace = address : null;
 	}
 	var db = await store(namespace);
+
+	swal({
+		title: "Share your session",
+		text: 'Share the Url with your friends!',
+		buttons: ["No thanks", "Cool, copy it!"]
+	}).then((value) => {
+		if (!value) {
+			return;
+		}
+		navigator.clipboard.writeText(document.location.href)
+		swal(
+			"Copied!",
+			"The text has been copied.",
+			"success",
+		);
+	})
 	if (!match) {
 		const query = btoa(db.address.toString());
 		document.location.href = document.location.href.replace(/\?.+$/, "");
@@ -200,10 +216,10 @@ var app = app || {};
 
 	// Create the data model
 	var model = new app.TodoModel(db, namespace);
-	
+
 	function render() {
 		ReactDOM.render(
-			<TodoApp model={model}/>,
+			<TodoApp model={model} />,
 			document.getElementsByClassName('todoapp')[0]
 		);
 	}
@@ -212,6 +228,6 @@ var app = app || {};
 	model.subscribe(render);
 	render();
 
-  // Load the database from locally persisted data
-  await db.load()
+	// Load the database from locally persisted data
+	await db.load()
 })();
