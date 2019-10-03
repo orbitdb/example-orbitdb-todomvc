@@ -211,7 +211,7 @@ var app = app || {};
 	if (!match) {
 		const query = btoa(db.address.toString());
 		document.location.href = document.location.href.replace(/\?.+$/, "");
-		document.location.href = document.location.href + `?query=${queryString}`;
+		document.location.href = document.location.href + `?query=${query}`;
 	}
 
 	// Create the data model
