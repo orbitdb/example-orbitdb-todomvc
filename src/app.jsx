@@ -208,11 +208,7 @@ var app = app || {};
 			"success",
 		);
 	})
-	if (!match) {
-		const query = btoa(db.address.toString());
-		document.location.href = document.location.href.replace(/\?.+$/, "");
-		document.location.href = document.location.href + `?query=${query}`;
-	}
+	
 
 	// Create the data model
 	var model = new app.TodoModel(db, namespace);
@@ -228,6 +224,11 @@ var app = app || {};
 	model.subscribe(render);
 	render();
 
+	if (!match) {
+		const query = btoa(db.address.toString());
+		document.location.href = document.location.href.replace(/\?.+$/, "");
+		document.location.href = document.location.href + `?query=${query}`;
+	}
 	// Load the database from locally persisted data
 	await db.load()
 })();
