@@ -9,16 +9,17 @@
     "url": "https://github.com/haadcode/example-orbitdb-todomvc"
   },
   "dependencies": {
-    "classnames": "^2.1.5",
-    "director": "^1.2.0",
-    "react": "^0.13.3",
-    "todomvc-app-css": "^2.0.0",
-    "todomvc-common": "^1.0.1",
-    "ipfs": "~0.27.1",
-    "orbit-db": "~0.18.7"
+    "classnames": "^2.2.6",
+    "director": "^1.2.8",
+    "ipfs": "~0.38.0",
+    "orbit-db": "~0.21.5",
+    "orbit-db-docstore": "^1.5.1",
+    "react": "^16.10.1",
+    "todomvc-app-css": "^2.2.0",
+    "todomvc-common": "^1.0.5"
   },
   "devDependencies": {
-    "http-server": "^0.10.0"
+    "http-server": "^0.11.1"
   },
   "homepage": "https://github.com/orbitdb/example-orbitdb-todomvc",
   "bugs": "https://github.com/orbitdb/example-orbitdb-todomvc/issues",
@@ -29,7 +30,7 @@
   ],
   "scripts": {
     "build": "./build.sh",
-    "start": "http-server -c-1 & open http://127.0.0.1:8080/index.html & wait",
+    "start": "http-server -p 3000 -c-1 & open http://127.0.0.1:8080/index.html & wait",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Haad",
