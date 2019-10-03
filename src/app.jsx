@@ -185,11 +185,25 @@ var app = app || {};
 	});
 
 	// Create the store (storage backend), namespace is our database name/id
+	// ToDo: add url query parsing here
+	const match = document.location.href.match(/query=([^&]+)/);
+	if (match) {
+		const address = atob(match[1]) 
+		OrbitDB.isValidAddress(address) ? namespace = address : null;
+		console.log('Namespace:', namespace)
+	}
 	var db = await store(namespace);
+	if (!match) {
+		const query = btoa(db.id);
+		document.location.href.replace(/\?.+$/, "")
+		document.location.href = document.location.href + `?query=${query}`
+	}
+	db.events.on('replicated', (address) => console.log('Database synced', address) )
+	db.events.on('peer', (peer) => console.log('Peer joined:', peer) )
 
 	// Create the data model
 	var model = new app.TodoModel(db, namespace);
-
+	
 	function render() {
 		ReactDOM.render(
 			<TodoApp model={model}/>,

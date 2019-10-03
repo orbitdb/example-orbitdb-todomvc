@@ -59,6 +59,6 @@ var app = app || {};
 				}
 			}
 			return newObj;
-		}
+		},
 	};
 })();
