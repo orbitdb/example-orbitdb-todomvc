@@ -30,7 +30,7 @@
   ],
   "scripts": {
     "build": "./build.sh",
-    "start": "http-server -p 3000 -c-1 & open http://127.0.0.1:8080/index.html & wait",
+    "start": "http-server -a 127.0.0.1 -p 8080 -c-1 -o index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Haad",
