@@ -11,7 +11,7 @@ const ipfsConfig = {
         // Websocket:
         // '/dns4/ws-star-signal-1.servep2p.com/tcp/443/wss/p2p-websocket-star',
         // '/dns4/ws-star-signal-2.servep2p.com/tcp/443/wss/p2p-websocket-star',
-        '/dns4/ws-star.discovery.libp2p.io/tcp/443/wss/p2p-websocket-star',
+        // '/dns4/ws-star.discovery.libp2p.io/tcp/443/wss/p2p-websocket-star',
         // WebRTC:
         // '/dns4/star-signal.cloud.ipfs.team/wss/p2p-webrtc-star',
         // Use local signal server
@@ -37,24 +37,14 @@ const dbConfig = {
 }
 
 const store = async (name) => {
-  return new Promise((resolve, reject) => {
-    // Create IPFS instance
-    const ipfs = new Ipfs(ipfsConfig)
-
-    ipfs.on('error', (e) => console.error(e))
-    ipfs.on('ready', async () => {
-      try {
-        // Create an OrbitDB instance
-        const orbitdb = await OrbitDB.createInstance(ipfs)
-        // Open (or create) database
-        const db = await orbitdb.docstore(name, dbConfig)
-        // ToDo: remove this line
-        window.db = db
-        // Done
-        resolve(db)
-      } catch (e) {
-        reject(e)
-      }
-    })
-  })
+  // Create IPFS instance
+  const ipfs = await Ipfs.create(ipfsConfig)
+  // Create an OrbitDB instance
+  const orbitdb = await OrbitDB.createInstance(ipfs)
+  // Open (or create) database
+  const db = await orbitdb.docstore(name, dbConfig)
+  // ToDo: remove this line
+  window.db = db
+  // Done
+  return db
 }
