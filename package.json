@@ -9,14 +9,14 @@
     "url": "https://github.com/haadcode/example-orbitdb-todomvc"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
-    "director": "^1.2.8",
+    "classnames": "^2.1.5",
+    "director": "^1.2.0",
     "ipfs": "^0.52.2",
     "orbit-db": "^0.26.0",
     "orbit-db-docstore": "^1.5.1",
-    "react": "^16.10.1",
-    "todomvc-app-css": "^2.2.0",
-    "todomvc-common": "^1.0.5"
+    "react": "^0.13.3",
+    "todomvc-app-css": "^2.0.0",
+    "todomvc-common": "^1.0.1"
   },
   "devDependencies": {
     "http-server": "^0.12.3"
