@@ -52,7 +52,8 @@ var app = app || {};
 		const newTodo = {
 			id: Utils.uuid(),
 			title: title,
-			completed: false
+			completed: false,
+      cleared: false,
 		}
 		await Utils.store(this.db, this.key, newTodo);
 		this.inform();
@@ -83,10 +84,13 @@ var app = app || {};
 		this.inform();
 	};
 
-	app.TodoModel.prototype.clearCompleted = function () {
-		this.todos = this.todos.filter(function (todo) {
-			return !todo.completed;
-		});
+	app.TodoModel.prototype.clearCompleted = async function () {
+    for (let todo of this.todos) {
+      if (todo.completed) {
+        const updatedTodo = Utils.extend({}, todo, {cleared: true});
+        await Utils.store(this.db, this.key, updatedTodo);
+      }
+    }
 		this.inform();
 	};
 
