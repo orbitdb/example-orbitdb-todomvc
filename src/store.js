@@ -46,8 +46,6 @@ const store = async (name) => {
   const orbitdb = await OrbitDB.createInstance(ipfs)
   // Open (or create) database
   const db = await orbitdb.docstore(name, dbConfig)
-  // ToDo: remove this line
-  window.db = db
   // Done
   return db
 }
