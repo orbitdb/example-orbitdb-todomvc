@@ -30,7 +30,7 @@
   ],
   "scripts": {
     "build": "./build.sh",
-    "start": "http-server --silent -a 127.0.0.1 -p 8080 -c-1 -o index.html",
+    "start": "cd dist/ && http-server --silent -a 127.0.0.1 -p 8080 -c-1 -o",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Haad",
