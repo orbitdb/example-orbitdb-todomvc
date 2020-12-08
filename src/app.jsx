@@ -103,7 +103,8 @@ var app = app || {};
 						default:
 							return true;
 					}
-				}, this);
+				}, this)
+				.sort((o, t) => o.title.toLowerCase().localeCompare(t.title.toLowerCase()));
 
 			var todoItems = shownTodos.map(function (todo) {
 				return (
