@@ -23,7 +23,7 @@ var app = app || {};
 			loaded: 0,
 			total: 0,
 		}
-		// When the database was loaded and is ready to use, 
+		// When the database was loaded and is ready to use,
 		// refresh our data model and set the state to ready
 		this.db.events.on('ready', () => {
 			this.ready = true
@@ -87,7 +87,6 @@ var app = app || {};
 		this.todos = this.todos.filter(function (todo) {
 			return !todo.completed;
 		});
-
 		this.inform();
 	};
 
