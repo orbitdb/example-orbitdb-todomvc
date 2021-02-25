@@ -1,5 +1,6 @@
 // Configuration for IPFS instance
 const ipfsConfig = {
+  preload: { enabled: false }, // Prevents large data transfers
   repo: '/orbitdb/examples/todomvc/ipfs/0.27.0',
   EXPERIMENTAL: {
     pubsub: true,
