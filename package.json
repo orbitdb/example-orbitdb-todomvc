@@ -12,7 +12,7 @@
     "classnames": "^2.1.5",
     "director": "^1.2.0",
     "ipfs": "^0.49.0",
-    "orbit-db": "^0.25.0",
+    "orbit-db": "^0.26.1",
     "orbit-db-docstore": "^1.5.1",
     "react": "^0.13.3",
     "todomvc-app-css": "^2.0.0",
