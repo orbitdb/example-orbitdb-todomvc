@@ -8,7 +8,7 @@ TodoMVC application using [OrbitDB](https://github.com/orbitdb/orbit-db) as a da
 
 Status: ***Work in progress***.
 
-**[LIVE DEMO](https://ipfs.io/ipfs/QmdapauyBinux52DUCfhRV44FTWmg6i1krvhQtKDEDWCPZ/)**
+**[LIVE DEMO](https://ipfs.io/ipfs/Qme8b6YJrSLsprNAZP3MRLeKP2mxW2WPPDp9VTYkpAtRAE/)**
 
 <p align="centers">
   <img src="https://raw.githubusercontent.com/haadcode/example-orbitdb-todomvc/master/screenshots/Screen%20Shot%202017-11-29%20at%2017.09.31.png" width="50%">
