@@ -9,5 +9,5 @@ cp node_modules/react/dist/JSXTransformer.js dist/lib/
 cp node_modules/director/build/director.js dist/lib/
 cp node_modules/orbit-db/dist/orbitdb.min.js dist/lib/
 cp node_modules/ipfs/dist/index.min.js dist/lib/ipfs.min.js
-cp -R src/ dist/
+cp -R src/ dist/src
 cp index.dist.html dist/index.html
