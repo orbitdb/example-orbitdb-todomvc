@@ -11,7 +11,7 @@
   "dependencies": {
     "classnames": "^2.1.5",
     "director": "^1.2.0",
-    "ipfs": "^0.51.0",
+    "ipfs": "^0.65.0",
     "orbit-db": "^0.26.1",
     "orbit-db-docstore": "^1.5.1",
     "react": "^0.13.3",
